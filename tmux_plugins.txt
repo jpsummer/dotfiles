@@ -1,0 +1,3 @@
+tmux-power
+tmux-prefix-highlight
+tpm
