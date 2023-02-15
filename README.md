@@ -1,6 +1,7 @@
-# Installation
+# Install da dotfiles
 
 ## Neovim
+### Installation
 Install a release from [neovim releases](https://github.com/neovim/neovim/releases)\
 Or install using a package manager.
 
@@ -19,6 +20,7 @@ Now you can copy the nvim folder to your home folder (~/).
 cp -r nvim/ ~/nvim
 ```
 
+### Package Manager
 You need to install Packer for managing neovim plugins.\
 For Unix (Linux/MacOS) use the following command to install Packer.
 ```shell
@@ -26,6 +28,7 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 ```
 
+### Install Plugins
 You can now use the following Packer commands from within neovim to install the plugins included in the nvim/ folder.
 ```
 :PackerCompile
@@ -33,6 +36,7 @@ You can now use the following Packer commands from within neovim to install the 
 ```
 
 ## Tmux
+### Installation
 Install using a packager manager.
 
 MacOS
@@ -45,11 +49,13 @@ Debian Linux
 apt install tmux
 ```
 
+### Package Manager
 Now you need to install tpm (tmux package manager) to manage tmux plugins.
 ```shell
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 
+### Install Plugins
 Now copy the tmux conf to your home folder (~/).
 ```shell
 cp .tmux.conf ~/.tmux.conf
