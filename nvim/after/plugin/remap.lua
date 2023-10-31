@@ -42,3 +42,12 @@ nnoremap("<C-q>", function() require("harpoon.ui").nav_file(1) end, silent)
 nnoremap("<C-w>", function() require("harpoon.ui").nav_file(2) end, silent)
 nnoremap("<C-e>", function() require("harpoon.ui").nav_file(3) end, silent)
 nnoremap("<C-r>", function() require("harpoon.ui").nav_file(4) end, silent)
+
+
+-- Half PageUp/PageDown
+nnoremap("<C-d>", "<C-d>zz")
+nnoremap("<C-u>", "<C-u>zz")
+
+-- Search Focus Middle
+nnoremap("N", "Nzz")
+nnoremap("n", "nzz")
