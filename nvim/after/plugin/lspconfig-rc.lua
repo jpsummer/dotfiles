@@ -21,6 +21,9 @@ local on_attach = function(client, bufnr)
     -- Go To Definition
     local opts = { buffer = bufnr, remap = false }
     vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
+
+    -- Code Actions
+    vim.keymap.set("n", "<leader>;ca", function() vim.lsp.buf.code_action() end, opts)
 end
 
 nvim_lsp.html.setup {
