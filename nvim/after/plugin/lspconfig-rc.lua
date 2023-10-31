@@ -17,6 +17,10 @@ local on_attach = function(client, bufnr)
         augroup END
         ]])
     end
+
+    -- Go To Definition
+    local opts = { buffer = bufnr, remap = false }
+    vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
 end
 
 nvim_lsp.html.setup {
