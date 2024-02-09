@@ -1,5 +1,21 @@
 # Install da dotfiles
 
+
+## Fresh Install
+Run these commands on a fresh ubuntu OS install to update your machine.
+```shell
+sudo apt update
+sudo apt upgrade
+sudo apt install git
+```
+
+Clone down the repository and make a folder for it to live in.
+```shell
+mkdir ~/.dotfiles
+cd ~/.dotfiles
+git clone https://github.com/jpsummer/dotfiles.git
+```
+
 ## Neovim
 ### Installation
 Install a release from [neovim releases](https://github.com/neovim/neovim/releases)\
@@ -11,16 +27,51 @@ brew install neovim
 ```
 
 Debian Linux
+#### apt package manager
 ```shell
 sudo apt-get install neovim
 ```
 
-Now you can copy the nvim folder to your home folder (~/).
+#### AppImage
 ```shell
-cp -r nvim/ ~/nvim
+wget https://github.com/neovim/neovim/releases/download/v0.9.5/nvim.appimage
+```
+try this command
+```shell
+chmod u+x nvim.appimage && ./nvim.appimage
+```
+if neovim successfully launches you can run these next commands.
+```shell
+mv nvim.appimage /usr/bin/
+```
+if you get this error message
+```
+dlopen(): error loading libfuse.so.2
+
+AppImages require FUSE to run. 
+```
+then try installing neovim with the following commands instead
+```shell
+./nvim.appimage --appimage-extract
+./squashfs-root/usr/bin/nvim
+```
+and then
+```shell
+mv squashfs-root/usr/bin/nvim ~/.local/share/applications
+echo "alias nvim='~/.local/share/applications/squashfs-root/usr/bin/nvim'" >> ~/.bashrc
+source ~/.bashrc
 ```
 
-### Package Manager
+Neovim is now installed.
+
+
+### Neovim config
+Now you can copy the nvim config folder to your .config folder.
+```shell
+cp -r nvim/ ~/.config/nvim
+```
+
+### NVIM Package Manager
 You need to install Packer for managing neovim plugins.\
 For Unix (Linux/MacOS) use the following command to install Packer.
 ```shell
