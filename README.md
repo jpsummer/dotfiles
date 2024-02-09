@@ -16,6 +16,8 @@ cd ~/.dotfiles
 git clone https://github.com/jpsummer/dotfiles.git
 ```
 
+##### Note!! If you clone with https you will not be able to easily push changes back up to remote. Clone with ssh for that use case.
+
 ## Neovim
 ### Installation
 Install a release from [neovim releases](https://github.com/neovim/neovim/releases)\
