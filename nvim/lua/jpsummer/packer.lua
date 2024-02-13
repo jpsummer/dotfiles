@@ -11,8 +11,6 @@ return require('packer').startup(function(use)
     -- colorscheme tokyonight
     use 'folke/tokyonight.nvim'
 
-    use 'kyazdani42/nvim-web-devicons'
-
     -- Load on a combination of conditions: specific filetypes or commands
     -- Also run code after load (see the "config" key)
     use {
@@ -43,16 +41,17 @@ return require('packer').startup(function(use)
     }
 
     -- LSP
-    use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
-    use 'onsails/lspkind-nvim' -- vscode-like pictograms for LSP
-    use 'hrsh7th/cmp-buffer' -- nivm-cmp source for buffer words
-    use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp source for neovim's built in LSP
-    use 'hrsh7th/nvim-cmp' -- auto-completion
+    use 'neovim/nvim-lspconfig'                            -- Configurations for Nvim LSP
+    use 'onsails/lspkind-nvim'                             -- vscode-like pictograms for LSP
+    use 'hrsh7th/cmp-buffer'                               -- nivm-cmp source for buffer words
+    use 'hrsh7th/cmp-nvim-lsp'                             -- nvim-cmp source for neovim's built in LSP
+    use 'hrsh7th/nvim-cmp'                                 -- auto-completion
     use({ "L3MON4D3/LuaSnip", tag = "v<CurrentMajor>.*" }) -- Snippet Engine
     use 'williamboman/mason.nvim'
     use 'williamboman/mason-lspconfig.nvim'
     use "windwp/nvim-autopairs"
     use 'windwp/nvim-ts-autotag'
+    use 'mfussenegger/nvim-jdtls' -- java language server
 
     -- Fuzzy Finder
     use 'nvim-lua/plenary.nvim'
@@ -63,7 +62,7 @@ return require('packer').startup(function(use)
     use 'ThePrimeagen/harpoon'
 
     -- Nice Looking Tabs
-    use 'akinsho/nvim-bufferline.lua'
+    -- use 'akinsho/nvim-bufferline.lua'
 
     -- Colorizer
     use 'norcalli/nvim-colorizer.lua'

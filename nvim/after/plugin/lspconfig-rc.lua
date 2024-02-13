@@ -13,7 +13,7 @@ local on_attach = function(client, bufnr)
         vim.cmd([[
         augroup Format
         autocmd! * <buffer>
-        autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()
+        autocmd BufWritePre <buffer> lua vim.lsp.buf.format()
         augroup END
         ]])
     end
@@ -75,7 +75,7 @@ nvim_lsp.pyright.setup {
     filetypes = { "python" }
 }
 
-nvim_lsp.sumneko_lua.setup {
+nvim_lsp.lua_ls.setup {
     on_attach = on_attach,
     settings = {
         Lua = {

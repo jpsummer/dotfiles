@@ -6,8 +6,11 @@ if (not status2) then return end
 mason.setup {}
 lspconfig.setup {
     ensure_installed = {
-        'tailwindcss'
-    }
+        'tailwindcss',
+        'lua_ls',
+        'tsserver',
+    },
+    automatic_installation = true,
 }
 
 require 'lspconfig'.tailwindcss.setup {}

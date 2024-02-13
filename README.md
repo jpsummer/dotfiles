@@ -6,8 +6,50 @@ Run these commands on a fresh ubuntu OS install to update your machine.
 ```shell
 sudo apt update
 sudo apt upgrade
-sudo apt install git
 ```
+
+Now install the dependencies
+```shell
+sudo apt install git \
+gcc \
+python3-pip \
+curl \
+unzip \
+ripgrep \
+fd-find \
+```
+
+You will also need to install Node.js and npm for some dependencies. You can install those both through the apt package manager if you don't intend to develop using any modern frameworks (React, Angular)  
+Otherwise, you will need a more recent version of Node, you can download the node version directly or install a version manager like [nvm](https://github.com/nvm-sh/nvm).
+```shell
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+```
+reload bash config to start using nvm
+```shell
+source ~/.bashrc
+```
+to use nvm, you can run the following command to find the latest LTS release.
+```shell
+nvm ls-remote --lts
+```
+then install whatever release you want
+```
+nvm install 20.11.0
+```
+confirm with `node -v`
+```
+v20.11.0
+```
+
+and finally,
+```shell
+pip install neovim
+npm install -g neovim
+```
+
+## Nerd Font
+Don't forget to install a nerd font!  
+[Browse Nerd Fonts Here](https://www.nerdfonts.com/font-downloads)
 
 Clone down the repository and make a folder for it to live in.
 ```shell
@@ -68,9 +110,18 @@ Neovim is now installed.
 
 
 ### Neovim config
-Now you can copy the nvim config folder to your .config folder.
+The best way to copy the neovim config is to symlink the git directory config to the .config folder.  
+This ensures that you are still able to get the most latest updates simply by just git pulling.  
+Or pushing your own updates simply by git pushing.  
+
+
+To symlink the config folder run the following command *replace <user-name> with your ubuntu username*
 ```shell
-cp -r nvim/ ~/.config/nvim
+ln -s /home/<user-name>/.dotfiles/dotfiles/nvim /home/<user-name>/.config
+```
+Ex.
+```shell
+ln -s /home/jpsummer/.dotfiles/dotfiles/nvim /home/jpsummer/.config
 ```
 
 ### NVIM Package Manager
@@ -84,7 +135,6 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 ### Install Plugins
 You can now use the following Packer commands from within neovim to install the plugins included in the nvim/ folder.
 ```
-:PackerCompile
 :PackerInstall
 ```
 
