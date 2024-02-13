@@ -51,6 +51,7 @@ npm install -g neovim
 Don't forget to install a nerd font!  
 [Browse Nerd Fonts Here](https://www.nerdfonts.com/font-downloads)
 
+## Da Dotfiles
 Clone down the repository and make a folder for it to live in.
 ```shell
 mkdir ~/.dotfiles
