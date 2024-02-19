@@ -51,3 +51,9 @@ nnoremap("<C-u>", "<C-u>zz")
 -- Search Focus Middle
 nnoremap("N", "Nzz")
 nnoremap("n", "nzz")
+
+-- Clear Search
+nnoremap("<leader><BS>", ":noh<CR>")
+
+-- System.out.println macro
+inoremap("so;", "System.out.println()<ESC>i")

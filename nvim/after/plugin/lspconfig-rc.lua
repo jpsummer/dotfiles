@@ -90,3 +90,7 @@ nvim_lsp.lua_ls.setup {
         },
     },
 }
+
+nvim_lsp.jdtls.setup {
+    on_attach = on_attach
+}
